@@ -7,9 +7,9 @@ namespace db_task.Views
 {
     interface IPersonView
     {
-        person Create(person newPerson);
-        List<person> Read();
-        person Update(person updatePerson);
-        person Delete(long id);
+        void Create(person newPerson);
+        void Read();
+        void Update(person updatePerson);
+        void Delete(long id);
     }
 }

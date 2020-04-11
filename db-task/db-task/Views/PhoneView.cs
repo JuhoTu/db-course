@@ -11,22 +11,22 @@ namespace db_task.Views
         //Inject
         private readonly IPhoneService _personService = new PhoneService();
 
-        public phone Create(phone newphone)
+        public void Create(phone newphone)
         {
             throw new NotImplementedException();
         }
 
-        public List<phone> Read()
+        public void Read()
         {
             throw new NotImplementedException();
         }
 
-        public phone Update(phone updatephone)
+        public void Update(phone updatephone)
         {
             throw new NotImplementedException();
         }
 
-        public phone Delete(long id)
+        public void Delete(long id)
         {
             throw new NotImplementedException();
         }

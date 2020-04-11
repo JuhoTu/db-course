@@ -1,4 +1,5 @@
 ﻿using System;
+using db_task.Views;
 
 namespace db_task
 {
@@ -8,6 +9,7 @@ namespace db_task
         {
             string choice = null;
             PersonView personView = new PersonView();
+            PhoneView phoneView = new PhoneView();
 
             string msg = "";
             do
@@ -18,20 +20,19 @@ namespace db_task
                 {
                     case "C":
 
-                        //personView.CreatePerson();
+                        //personView.Create();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "R":
-                        //personView.Read(5002);
-                        //personView.PrintAll();
+                        personView.Read();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "U":
-                        //personView.UpdatePerson();
+                        //personView.Update();
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "D":
-                        //personView.DeletePerson(5003);
+                        //personView.Delete();
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "X":

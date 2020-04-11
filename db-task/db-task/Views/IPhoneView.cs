@@ -7,9 +7,9 @@ namespace db_task.Views
 {
     interface IPhoneView
     {
-        phone Create(phone newphone);
-        List<phone> Read();
-        phone Update(phone updatephone);
-        phone Delete(long id);
+        void Create(phone newphone);
+        void Read();
+        void Update(phone updatephone);
+        void Delete(long id);
     }
 }

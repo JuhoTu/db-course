@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using db_task.Data;
 using db_task.Models;
@@ -18,7 +19,8 @@ namespace db_task.Repository
 
         public List<person> Read()
         {
-            throw new NotImplementedException();
+            var persons = _personContext.person.ToList();
+            return persons;
         }
 
         public person Update(person updatePerson)

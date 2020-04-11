@@ -18,7 +18,8 @@ namespace db_task.Services
 
         public List<person> Read()
         {
-            throw new NotImplementedException();
+            var persons = _personRepository.Read();
+            return persons;
         }
 
         public person Update(person updatePerson)
