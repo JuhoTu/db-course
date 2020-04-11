@@ -11,10 +11,14 @@ namespace db_task
     {
         //Inject
         private readonly IPersonService _personService = new PersonService();
+        //Inject
+        private readonly IPhoneView _phoneView = new PhoneView();
 
-        public void Create(person newPerson)
+        public void Create()
         {
-            throw new NotImplementedException();
+            person newPerson = new person() {name = "Mikki Hiiri", age = 123};
+            _personService.Create(newPerson);
+            _phoneView.Create(newPerson.id);
         }
 
         public void Read()
@@ -23,7 +27,7 @@ namespace db_task
             PrintPersonData(persons);
         }
 
-        public void Update(person updatePerson)
+        public void Update()
         {
             throw new NotImplementedException();
         }
@@ -35,10 +39,11 @@ namespace db_task
 
         private void PrintPersonData(List<person> persons)
         {
-            Console.WriteLine("\t\tName\tAge\tPhone");
+            Console.WriteLine("\tName\t\t\tAge\tPhones");
             foreach (var p in persons)
             {
-                Console.WriteLine($"{p.id}\t{p.name}\t{p.age}\t{p.phone}");
+                Console.Write($"\n{p.id}\t{p.name}\t\t{p.age}");
+                _phoneView.Read(p.id);
             }
         }
     }

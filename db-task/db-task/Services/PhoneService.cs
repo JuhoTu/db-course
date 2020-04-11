@@ -9,21 +9,24 @@ namespace db_task.Services
     class PhoneService : IPhoneService
     {
         //Inject
-        private readonly IPhoneRepository _personRepository = new PhoneRepository();
+        private readonly IPhoneRepository _phoneRepository = new PhoneRepository();
 
         public phone Create(phone newphone)
         {
-            throw new NotImplementedException();
+            var phone =_phoneRepository.Create(newphone);
+            return phone;
         }
 
-        public List<phone> Read()
+        public List<phone> Read(long id)
         {
-            throw new NotImplementedException();
+            var phones = _phoneRepository.Read(id);
+            return phones;
         }
 
-        public phone Update(phone updatephone)
+        public phone Update(long id, phone updatephone)
         {
-            throw new NotImplementedException();
+            var phones = _phoneRepository.Update(id, updatephone);
+            return phones;
         }
 
         public phone Delete(long id)

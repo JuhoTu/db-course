@@ -13,7 +13,8 @@ namespace db_task.Services
 
         public person Create(person newPerson)
         {
-            throw new NotImplementedException();
+            var createPerson = _personRepository.Create(newPerson);
+            return createPerson;
         }
 
         public List<person> Read()

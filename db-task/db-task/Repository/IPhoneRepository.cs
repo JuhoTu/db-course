@@ -8,8 +8,8 @@ namespace db_task.Repository
     interface IPhoneRepository
     {
         phone Create(phone newphone);
-        List<phone> Read();
-        phone Update(phone updatephone);
+        List<phone> Read(long id);
+        phone Update(long id, phone updatephone);
         phone Delete(long id);
     }
 }

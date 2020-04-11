@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using db_task.Data;
 using db_task.Models;
+using db_task.Services;
 
 namespace db_task.Repository
 {
@@ -13,17 +15,41 @@ namespace db_task.Repository
 
         public phone Create(phone newphone)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _personContext.phone.Add(newphone);
+                _personContext.SaveChanges();
+                Console.WriteLine("Phone saved");
+                return newphone;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
-        public List<phone> Read()
+        public List<phone> Read(long id)
         {
-            throw new NotImplementedException();
+            var phones = _personContext.phone.Where(p => p.personId == id).ToList();
+            return phones;
         }
 
-        public phone Update(phone updatephone)
+        public phone Update(long id, phone updatephone)
         {
-            throw new NotImplementedException();
+            var phones = _personContext.phone.Where(p => p.id == id).ToList();
+            try
+            {
+                _personContext.phone.Add(updatephone);
+                _personContext.SaveChanges();
+                Console.WriteLine("Phone saved");
+                return updatephone;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         public phone Delete(long id)

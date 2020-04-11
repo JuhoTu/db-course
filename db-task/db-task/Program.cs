@@ -19,8 +19,7 @@ namespace db_task
                 switch (choice.ToUpper())
                 {
                     case "C":
-
-                        //personView.Create();
+                        personView.Create();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "R":
@@ -28,7 +27,7 @@ namespace db_task
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "U":
-                        //personView.Update();
+                        phoneView.Update();
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "D":

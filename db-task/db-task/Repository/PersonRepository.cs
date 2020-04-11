@@ -14,7 +14,18 @@ namespace db_task.Repository
 
         public person Create(person newPerson)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _personContext.person.Add(newPerson);
+                _personContext.SaveChanges();
+                Console.WriteLine("Person saved");
+                return newPerson;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         public List<person> Read()
