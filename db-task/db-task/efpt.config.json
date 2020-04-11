@@ -1,0 +1,30 @@
+﻿{
+   "ContextClassName": "PersonContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "db_task",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[person]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[phone]"
+      }
+   ],
+   "UseDatabaseNames": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}
