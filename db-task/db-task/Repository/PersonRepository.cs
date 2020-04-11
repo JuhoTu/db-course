@@ -34,14 +34,21 @@ namespace db_task.Repository
             return persons;
         }
 
+        public person ReadById(long id)
+        {
+            var person = _personContext.person.FirstOrDefault(p=>p.id == id);
+            return person;
+        }
+
         public person Update(person updatePerson)
         {
             throw new NotImplementedException();
         }
 
-        public person Delete(long id)
+        public void Delete(person deletePerson)
         {
-            throw new NotImplementedException();
+            _personContext.person.Remove(deletePerson);
+            _personContext.SaveChanges();
         }
     }
 }

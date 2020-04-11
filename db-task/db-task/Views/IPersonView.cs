@@ -10,6 +10,6 @@ namespace db_task.Views
         void Create();
         void Read();
         void Update();
-        void Delete(long id);
+        void Delete();
     }
 }

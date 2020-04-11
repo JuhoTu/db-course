@@ -30,10 +30,10 @@ namespace db_task.Views
         public void Update()
         {
             Console.WriteLine("Give the phone's id whose number you want to configure: ");
-            var userInput = long.Parse(Console.ReadLine());
-            var phoneData = _phoneService.Read(userInput);
-            phoneData[0].number = Console.ReadLine();
-            _phoneService.Update(userInput, phoneData[0]);
+            long id = long.Parse(Console.ReadLine());
+            var phoneData = _phoneService.ReadById(id);
+            phoneData.number = Console.ReadLine();
+            _phoneService.Update(id, phoneData);
         }
 
         public void Delete(long id)

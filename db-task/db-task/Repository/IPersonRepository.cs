@@ -9,7 +9,8 @@ namespace db_task.Repository
     {
         person Create(person newPerson);
         List<person> Read();
+        person ReadById(long id);
         person Update(person updatePerson);
-        person Delete(long id);
+        void Delete(person deletePerson);
     }
 }

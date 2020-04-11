@@ -23,14 +23,27 @@ namespace db_task.Services
             return persons;
         }
 
+        public person ReadById(long id)
+        {
+            var person = _personRepository.ReadById(id);
+            return person;
+        }
+
         public person Update(person updatePerson)
         {
             throw new NotImplementedException();
         }
 
-        public person Delete(long id)
+        public void Delete(long id)
         {
-            throw new NotImplementedException();
+            var getPerson = ReadById(id);
+            if (getPerson == null)
+                Console.WriteLine("Person has already been removed or not created at all");
+            else
+            {
+                _personRepository.Delete(getPerson);
+                Console.WriteLine($"Person {getPerson.name} has been deleted");
+            }
         }
     }
 }

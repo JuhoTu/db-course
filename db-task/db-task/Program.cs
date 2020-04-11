@@ -31,7 +31,7 @@ namespace db_task
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "D":
-                        //personView.Delete();
+                        personView.Delete();
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "X":

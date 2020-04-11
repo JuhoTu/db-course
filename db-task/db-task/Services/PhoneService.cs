@@ -23,10 +23,22 @@ namespace db_task.Services
             return phones;
         }
 
-        public phone Update(long id, phone updatephone)
+        public phone ReadById(long id)
         {
-            var phones = _phoneRepository.Update(id, updatephone);
+            var phones = _phoneRepository.ReadById(id);
             return phones;
+        }
+
+        public phone Update(long id, phone updatedNum)
+        {
+            var getPhone = Read(id);
+            if (getPhone == null)
+            {
+                Console.WriteLine("Can't find phone -- update failed.");
+                return null;
+            }
+            var phones = _phoneRepository.Update(updatedNum);
+            return updatedNum;
         }
 
         public phone Delete(long id)

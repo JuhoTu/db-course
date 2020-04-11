@@ -9,7 +9,8 @@ namespace db_task.Services
     {
         phone Create(phone newphone);
         List<phone> Read(long id);
-        phone Update(long id, phone updatephone);
+        phone ReadById(long id);
+        phone Update(long id, phone updatedNum);
         phone Delete(long id);
     }
 }

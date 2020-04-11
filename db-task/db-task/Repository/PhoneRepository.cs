@@ -35,21 +35,18 @@ namespace db_task.Repository
             return phones;
         }
 
-        public phone Update(long id, phone updatephone)
+        public phone ReadById(long id)
         {
-            var phones = _personContext.phone.Where(p => p.id == id).ToList();
-            try
-            {
-                _personContext.phone.Add(updatephone);
-                _personContext.SaveChanges();
-                Console.WriteLine("Phone saved");
-                return updatephone;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
+            var phones = _personContext.phone.FirstOrDefault(p => p.id == id);
+            return phones;
+        }
+
+        public phone Update(phone updatedNum)
+        {
+            _personContext.phone.Update(updatedNum);
+            _personContext.SaveChanges();
+            Console.WriteLine("Phone saved");
+            return updatedNum;
         }
 
         public phone Delete(long id)

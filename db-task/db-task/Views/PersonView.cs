@@ -32,9 +32,14 @@ namespace db_task
             throw new NotImplementedException();
         }
 
-        public void Delete(long id)
+        /// <summary>
+        /// Removes last person if the id matches to
+        /// </summary>
+        public void Delete()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Give the person's id you want to remove: ");
+            var deletePersonId = int.Parse(Console.ReadLine());
+            _personService.Delete(deletePersonId);
         }
 
         private void PrintPersonData(List<person> persons)
