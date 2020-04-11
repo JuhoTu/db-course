@@ -41,9 +41,9 @@ namespace db_task.Services
             return updatedNum;
         }
 
-        public phone Delete(long id)
+        public void Delete(phone dPhone)
         {
-            throw new NotImplementedException();
+            _phoneRepository.Delete(dPhone);
         }
     }
 }

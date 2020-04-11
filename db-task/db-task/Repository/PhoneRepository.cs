@@ -49,9 +49,10 @@ namespace db_task.Repository
             return updatedNum;
         }
 
-        public phone Delete(long id)
+        public void Delete(phone dPhone)
         {
-            throw new NotImplementedException();
+            _personContext.phone.Remove(dPhone);
+            _personContext.SaveChanges();
         }
     }
 }

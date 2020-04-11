@@ -11,6 +11,6 @@ namespace db_task.Services
         List<phone> Read(long id);
         phone ReadById(long id);
         phone Update(long id, phone updatedNum);
-        phone Delete(long id);
+        void Delete(phone dPhone);
     }
 }

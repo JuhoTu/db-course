@@ -32,14 +32,19 @@ namespace db_task
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Removes last person if the id matches to
-        /// </summary>
         public void Delete()
         {
             Console.WriteLine("Give the person's id you want to remove: ");
             var deletePersonId = int.Parse(Console.ReadLine());
-            _personService.Delete(deletePersonId);
+            var getPerson = _personService.ReadById(deletePersonId);
+            if (getPerson == null)
+                Console.WriteLine("Could not find with given id");
+            else
+            {
+                _phoneView.Delete(deletePersonId);
+                _personService.Delete(deletePersonId);
+                Console.WriteLine(getPerson.name + "is now deleted");
+            }
         }
 
         private void PrintPersonData(List<person> persons)

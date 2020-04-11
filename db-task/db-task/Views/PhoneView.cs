@@ -38,7 +38,11 @@ namespace db_task.Views
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            var phones = _phoneService.Read(id);
+            foreach (var phone in phones)
+            {
+                _phoneService.Delete(phone);
+            }
         }
     }
 }

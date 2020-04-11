@@ -11,6 +11,6 @@ namespace db_task.Repository
         List<phone> Read(long id);
         phone ReadById(long id);
         phone Update(phone updatedPhone);
-        phone Delete(long id);
+        void Delete(phone dPhone);
     }
 }
