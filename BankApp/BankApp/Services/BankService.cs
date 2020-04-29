@@ -7,22 +7,22 @@ namespace BankApp.Services
 {
     class BankService : IBankService
     {
-        public Bank Create(Bank newBank)
+        public BankSection Create(BankSection newBank)
         {
             throw new NotImplementedException();
         }
 
-        public Bank Read(Bank readBank)
+        public BankSection Read(BankSection readBank)
         {
             throw new NotImplementedException();
         }
 
-        public Bank Update(Bank updateBank)
+        public BankSection Update(BankSection updateBank)
         {
             throw new NotImplementedException();
         }
 
-        public Bank Delete(Bank deleteBank)
+        public BankSection Delete(BankSection deleteBank)
         {
             throw new NotImplementedException();
         }

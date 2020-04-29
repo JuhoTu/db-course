@@ -7,9 +7,9 @@ namespace BankApp.Services
 {
     interface ICustomerService
     {
-        Customer Create(Customer newCustomer);
-        Customer Read(Customer readCustomer);
-        Customer Update(Customer updateCustomer);
-        Customer Delete(Customer deleteCustomer);
+        CustomerSection Create(CustomerSection newCustomer);
+        CustomerSection Read(CustomerSection readCustomer);
+        CustomerSection Update(CustomerSection updateCustomer);
+        CustomerSection Delete(CustomerSection deleteCustomer);
     }
 }

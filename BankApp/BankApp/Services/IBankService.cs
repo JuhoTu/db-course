@@ -7,9 +7,9 @@ namespace BankApp.Services
 {
     interface IBankService
     {
-        Bank Create(Bank newBank);
-        Bank Read(Bank readBank);
-        Bank Update(Bank updateBank);
-        Bank Delete(Bank deleteBank);
+        BankSection Create(BankSection newBank);
+        BankSection Read(BankSection readBank);
+        BankSection Update(BankSection updateBank);
+        BankSection Delete(BankSection deleteBank);
     }
 }

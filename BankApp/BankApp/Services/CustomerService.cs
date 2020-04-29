@@ -7,22 +7,22 @@ namespace BankApp.Services
 {
     class CustomerService : ICustomerService
     {
-        public Customer Create(Customer newCustomer)
+        public CustomerSection Create(CustomerSection newCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public Customer Read(Customer readCustomer)
+        public CustomerSection Read(CustomerSection readCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public Customer Update(Customer updateCustomer)
+        public CustomerSection Update(CustomerSection updateCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public Customer Delete(Customer deleteCustomer)
+        public CustomerSection Delete(CustomerSection deleteCustomer)
         {
             throw new NotImplementedException();
         }
