@@ -8,7 +8,7 @@ namespace BankApp.Repository
     interface IBankRepository
     {
         BankSection Create(BankSection newBank);
-        BankSection Read(BankSection readBank);
+        List<Bank> Read();
         BankSection Update(BankSection updateBank);
         BankSection Delete(BankSection deleteBank);
     }

@@ -41,14 +41,14 @@ namespace BankApp
                         msg = "\n---------------------------->! \nPress Enter to continue!";
                         break;
                     case "X":
-                        msg = "\nChanging to main menu";
+                        msg = "\nChanging to main menu\nPress a key to continue";
                         break;
                     default:
                         msg = "Error occured - Press Enter and start over!";
                         break;
                 }
                 Console.WriteLine(msg);
-                System.Threading.Thread.Sleep(1000);
+                Console.ReadKey();
             }
             while (choice.ToUpper() != "X");
         }

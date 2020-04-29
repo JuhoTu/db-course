@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Models;
 using BankApp.Services;
 
 namespace BankApp.Views
@@ -16,7 +17,8 @@ namespace BankApp.Views
 
         public void Read()
         {
-            throw new NotImplementedException();
+            var banks = _bankService.Read();
+            PrintBanks(banks);
         }
 
         public void Update()
@@ -27,6 +29,15 @@ namespace BankApp.Views
         public void Delete()
         {
             throw new NotImplementedException();
+        }
+
+        private void PrintBanks(List<Bank> banks)
+        {
+            Console.WriteLine("id\tBank\t\tBIC");
+            foreach (var b in banks)
+            {
+                Console.Write($"\n{b.Id}\t{b.Name}\t\t{b.BIC}");
+            }
         }
     }
 }

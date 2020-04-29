@@ -15,9 +15,10 @@ namespace BankApp.Services
             throw new NotImplementedException();
         }
 
-        public BankSection Read(BankSection readBank)
+        public List<Bank> Read()
         {
-            throw new NotImplementedException();
+            var banks = _bankRepository.Read();
+            return banks;
         }
 
         public BankSection Update(BankSection updateBank)
