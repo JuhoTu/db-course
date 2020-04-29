@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Services;
 
 namespace BankApp.Views
 {
     class BankView : IBankView
     {
+        //Inject
+        private readonly IBankService _bankService = new BankService();
         public void Create()
         {
             throw new NotImplementedException();

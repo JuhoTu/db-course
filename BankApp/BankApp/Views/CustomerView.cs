@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Services;
 
 namespace BankApp.Views
 {
     class CustomerView : ICustomerView
     {
+        //Inject
+        private readonly ICustomerService _customerService = new CustomerService();
         public void Create()
         {
             throw new NotImplementedException();

@@ -47,10 +47,10 @@ namespace BankApp
                         msg = "Error occured - Press Enter and start over!";
                         break;
                 }
+
                 Console.WriteLine(msg);
                 System.Threading.Thread.Sleep(1000);
-            }
-            while (choice.ToUpper() != "X");
+            } while (choice.ToUpper() != "X");
         }
 
         static string UserInterface()
@@ -66,4 +66,5 @@ namespace BankApp
 
             return Console.ReadLine();
         }
+    }
 }

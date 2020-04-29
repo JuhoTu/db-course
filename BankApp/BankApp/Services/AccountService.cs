@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using BankApp.Models;
+using BankApp.Repository;
 
 namespace BankApp.Services
 {
     class AccountService : IAccountService
     {
+        //Inject
+        private readonly IAccountRepository _accountRepository = new AccountRepository();
         public Account Create(Account newAccount)
         {
             throw new NotImplementedException();

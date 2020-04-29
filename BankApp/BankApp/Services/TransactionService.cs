@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using BankApp.Models;
+using BankApp.Repository;
 
 namespace BankApp.Services
 {
     class TransactionService : ITransactionService
     {
+        //Inject
+        private readonly ITransactionRepository _transactionRepository = new TransactionRepository();
         public Transaction Create(Transaction newTransaction)
         {
             throw new NotImplementedException();

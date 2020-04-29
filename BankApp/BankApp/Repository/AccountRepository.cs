@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Data;
 using BankApp.Models;
 
 namespace BankApp.Repository
 {
     class AccountRepository : IAccountRepository
     {
+        //Inject
+        private readonly BankdbContext _bankdbContext = new BankdbContext();
         public Account Create(Account newAccount)
         {
             throw new NotImplementedException();

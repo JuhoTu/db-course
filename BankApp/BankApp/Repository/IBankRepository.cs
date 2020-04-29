@@ -5,7 +5,7 @@ using BankApp.Models;
 
 namespace BankApp.Repository
 {
-    interface IBankReposiroty
+    interface IBankRepository
     {
         BankSection Create(BankSection newBank);
         BankSection Read(BankSection readBank);

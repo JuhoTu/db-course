@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using BankApp.Models;
+using BankApp.Repository;
 
 namespace BankApp.Services
 {
     class BankService : IBankService
     {
+        //Inject
+        private readonly IBankRepository _bankRepository = new BankRepository();
         public BankSection Create(BankSection newBank)
         {
             throw new NotImplementedException();
