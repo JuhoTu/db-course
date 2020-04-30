@@ -12,7 +12,8 @@ namespace BankApp.Services
         private readonly ICustomerRepository _customerRepository = new CustomerRepository();
         public Customer Create(Customer newCustomer)
         {
-            throw new NotImplementedException();
+            var createCustomer = _customerRepository.Create(newCustomer);
+            return newCustomer;
         }
 
         public Customer Read(Customer readCustomer)

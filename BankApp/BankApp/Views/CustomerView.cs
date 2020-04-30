@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Models;
 using BankApp.Services;
 
 namespace BankApp.Views
@@ -11,7 +12,14 @@ namespace BankApp.Views
         private readonly ICustomerService _customerService = new CustomerService();
         public void Create()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Input first name: ");
+            string fName = Console.ReadLine();
+            Console.WriteLine("Input last name: ");
+            string lName = Console.ReadLine();
+            Console.WriteLine("Input bank id: ");
+            long bankId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            Customer newCustomer = new Customer() { FirstName = fName, LastName = lName, BankId = bankId };
+            _customerService.Create(newCustomer);
         }
 
         public void Read()
