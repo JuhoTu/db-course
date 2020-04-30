@@ -36,7 +36,8 @@ namespace BankApp.Services
 
         public Customer Delete(Customer deleteCustomer)
         {
-            throw new NotImplementedException();
+            _customerRepository.Delete(deleteCustomer);
+            return deleteCustomer;
         }
     }
 }

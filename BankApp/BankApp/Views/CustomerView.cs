@@ -55,7 +55,18 @@ namespace BankApp.Views
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            var customers = _customerService.Read();
+            Console.WriteLine("Input customer id you want to delete: ");
+            long customerId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            var updateCustomer = ReturnCustomerById(customers, customerId);
+            if (updateCustomer != null)
+            {
+                _customerService.Delete(updateCustomer);
+            }
+            else
+            {
+                Console.WriteLine("Could not find a customer with customerId: " + customerId);
+            }
         }
 
         private void PrintCustomers(List<Customer> customers)

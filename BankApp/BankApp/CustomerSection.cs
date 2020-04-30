@@ -205,11 +205,11 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-
+                        customerView.Delete();
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "2":
-
+                        accountView.Delete();
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":

@@ -57,7 +57,18 @@ namespace BankApp.Repository
 
         public Customer Delete(Customer deleteCustomer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Customer.Remove(deleteCustomer);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Customer successfully deleted");
+                return deleteCustomer;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Customer deletion failed: " + e);
+                return null;
+            }
         }
     }
 }
