@@ -124,7 +124,11 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "3":
-                        transactionView.Create();
+                        Console.WriteLine("Enter customer's ID to list their first account's transactions: ");
+                        long customerId = long.Parse(Console.ReadLine());
+                        string IBAN = accountView.Read(customerId, 0);
+                        decimal amount = transactionView.Create(IBAN); // expecting the user to input in correct form
+                        accountView.Update(IBAN, amount);
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":

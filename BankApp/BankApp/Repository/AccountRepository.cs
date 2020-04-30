@@ -47,7 +47,18 @@ namespace BankApp.Repository
 
         public Account Update(Account updateAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Account.Update(updateAccount);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Account updated successfully");
+                return updateAccount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Account update failed: " + ex.Message);
+                return null;
+            }
         }
 
         public Account Delete(Account deleteAccount)

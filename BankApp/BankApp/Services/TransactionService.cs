@@ -12,7 +12,8 @@ namespace BankApp.Services
         private readonly ITransactionRepository _transactionRepository = new TransactionRepository();
         public Transaction Create(Transaction newTransaction)
         {
-            throw new NotImplementedException();
+            var createTransaction = _transactionRepository.Create(newTransaction);
+            return newTransaction;
         }
 
         public List<Transaction> Read()

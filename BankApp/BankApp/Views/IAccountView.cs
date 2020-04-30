@@ -10,7 +10,7 @@ namespace BankApp.Views
         void Read();
         void Read(long bankId);
         string Read(long customerId, int i);
-        void Update();
+        void Update(string IBAN, decimal amount);
         void Delete();
     }
 }

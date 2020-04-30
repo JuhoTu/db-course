@@ -6,7 +6,7 @@ namespace BankApp.Views
 {
     interface ITransactionView
     {
-        void Create();
+        decimal Create(string IBAN);
         void Read();
         void Read(string IBAN);
         void Update();

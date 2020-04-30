@@ -10,9 +10,13 @@ namespace BankApp.Views
     {
         //Inject
         private readonly ITransactionService _transactionService = new TransactionService();
-        public void Create()
+        public decimal Create(string IBAN)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter the amount: ");
+            decimal amount = int.Parse(Console.ReadLine());
+            Transaction newTransaction = new Transaction() {IBAN = IBAN, Amount = amount};
+            _transactionService.Create(newTransaction);
+            return amount;
         }
 
         public void Read()

@@ -13,7 +13,18 @@ namespace BankApp.Repository
         private readonly BankdbContext _bankdbContext = new BankdbContext();
         public Transaction Create(Transaction newTransaction)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Transaction.Add(newTransaction);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Transaction added successfully");
+                return newTransaction;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Transaction creation failed" + ex.Message);
+                return null;
+            }
         }
 
         public List<Transaction> Read()

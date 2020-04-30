@@ -45,9 +45,19 @@ namespace BankApp.Views
             return accounts[i].IBAN;
         }
 
-        public void Update()
+        public void Update(string IBAN, decimal amount)
         {
-            throw new NotImplementedException();
+            var accounts = _accountService.Read();
+            var updateAccount = ReturnAccountByIBAN(accounts, IBAN);
+            if (updateAccount != null)
+            {
+                updateAccount.Balance += amount;
+                _accountService.Update(updateAccount);
+            }
+            else
+            {
+                Console.WriteLine("Could not find account with IBAN: " + IBAN);
+            }
         }
 
         public void Delete()
@@ -78,6 +88,23 @@ namespace BankApp.Views
             }
 
             return IBAN;
+        }
+
+        /// <summary>
+        /// Return account by given IBAN
+        /// </summary>
+        /// <param name="accounts"></param>
+        /// <param name="IBAN"></param>
+        /// <returns></returns>
+        private Account ReturnAccountByIBAN(List<Account> accounts, string IBAN)
+        {
+            foreach (var a in accounts)
+            {
+                if (a.IBAN == IBAN)
+                    return a;
+            }
+
+            return null;
         }
     }
 }

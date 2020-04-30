@@ -36,7 +36,8 @@ namespace BankApp.Services
 
         public Account Update(Account updateAccount)
         {
-            throw new NotImplementedException();
+            var account = _accountRepository.Update(updateAccount);
+            return updateAccount;
         }
 
         public Account Delete(Account deleteAccount)
