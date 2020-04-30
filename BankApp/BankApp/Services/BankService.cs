@@ -30,7 +30,8 @@ namespace BankApp.Services
 
         public Bank Delete(Bank deleteBank)
         {
-            throw new NotImplementedException();
+            _bankRepository.Delete(deleteBank);
+            return deleteBank;
         }
     }
 }

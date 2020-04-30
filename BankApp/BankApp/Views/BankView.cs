@@ -29,9 +29,9 @@ namespace BankApp.Views
         public void Update()
         {
             Console.WriteLine("Give the bank's id whose name you want to configure: ");
-            long id = long.Parse(Console.ReadLine());
+            long id = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
             var banks = _bankService.Read();
-            var bank = ReturnBankId(banks, id);
+            var bank = ReturnBankById(banks, id);
             if (bank != null)
             {
                 Console.WriteLine("Input a new name to bank: ");
@@ -46,7 +46,18 @@ namespace BankApp.Views
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Give the bank's id you want to delete: ");
+            long id = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            var banks = _bankService.Read();
+            var bank = ReturnBankById(banks, id);
+            if (bank != null)
+            {
+                _bankService.Delete(bank);
+            }
+            else
+            {
+                Console.WriteLine("Could not find a bank with id " + id);
+            }
         }
 
         private void PrintBanks(List<Bank> banks)
@@ -58,7 +69,13 @@ namespace BankApp.Views
             }
         }
 
-        private Bank ReturnBankId(List<Bank> banks, long id)
+        /// <summary>
+        /// Returns bank with given id from bank list
+        /// </summary>
+        /// <param name="banks"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        private Bank ReturnBankById(List<Bank> banks, long id)
         {
             foreach (var b in banks)
             {

@@ -37,21 +37,31 @@ namespace BankApp.Repository
         {
             try
             {
-                _bankdbContext.Bank.Add(updateBank);
+                _bankdbContext.Bank.Update(updateBank);
                 _bankdbContext.SaveChanges();
                 Console.WriteLine("Bank updated successfully");
                 return updateBank;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Bank update failed" + ex.Message);
+                Console.WriteLine("Bank update failed: " + ex.Message);
                 return null;
             }
         }
 
         public Bank Delete(Bank deleteBank)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Bank.Remove(deleteBank);
+                _bankdbContext.SaveChanges();
+                return deleteBank;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Bank delete failed: " + e);
+                return null;
+            }
         }
     }
 }
