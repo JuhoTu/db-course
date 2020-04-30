@@ -72,31 +72,26 @@ namespace BankApp
             {
                 Console.WriteLine("BankApp\nCustomer section\nCreate");
                 Console.WriteLine("[1] Create User");
-                Console.WriteLine("[2] Create Transaction");
+                Console.WriteLine("[2] Create Account");
+                Console.WriteLine("[3] Create Transaction");
                 Console.WriteLine("[X] Close creation");
                 Console.Write("\nChoose procedure: ");
             }
             else if (caller == 3)
             {
                 Console.WriteLine("BankApp\nCustomer section\nRead");
-                Console.WriteLine("[1] Create User");
-                Console.WriteLine("[2] Create Transaction");
+                Console.WriteLine("[1] Print accounts by bank");
+                Console.WriteLine("[2] Print customers by bank");
+                Console.WriteLine("[3] Show account information by customer");
+                Console.WriteLine("[4] Show customer's transactions");
                 Console.WriteLine("[X] Close reading");
                 Console.Write("\nChoose procedure: ");
             }
             else if (caller == 4)
             {
-                Console.WriteLine("BankApp\nCustomer section\nUpdate");
-                Console.WriteLine("[1] Create User");
-                Console.WriteLine("[2] Create Transaction");
-                Console.WriteLine("[X] Close updating");
-                Console.Write("\nChoose procedure: ");
-            }
-            else if (caller == 5)
-            {
                 Console.WriteLine("BankApp\nCustomer section\nDelete");
-                Console.WriteLine("[1] Create User");
-                Console.WriteLine("[2] Create Transaction");
+                Console.WriteLine("[1] Delete User");
+                Console.WriteLine("[2] Delete Transaction");
                 Console.WriteLine("[X] Close deleting");
                 Console.Write("\nChoose procedure: ");
             }
@@ -125,6 +120,10 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
+                        accountView.Create();
+                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        break;
+                    case "3":
                         transactionView.Create();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
@@ -174,34 +173,7 @@ namespace BankApp
 
         private void Update()
         {
-            string choice = null;
-
-            string msg = "";
-            do
-            {
-                choice = UserInterface(4);
-
-                switch (choice.ToUpper())
-                {
-                    case "1":
-                        customerView.Create();
-                        accountView.Create();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
-                        break;
-                    case "2":
-                        transactionView.Create();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
-                        break;
-                    case "X":
-                        msg = "\nBye bye!";
-                        break;
-                    default:
-                        msg = "Error occured - Press Enter and start over!";
-                        break;
-                }
-                Console.WriteLine(msg);
-            }
-            while (choice.ToUpper() != "X");
+            // update a customer's info
         }
 
         private void Delete()
@@ -211,7 +183,7 @@ namespace BankApp
             string msg = "";
             do
             {
-                choice = UserInterface(5);
+                choice = UserInterface(4);
 
                 switch (choice.ToUpper())
                 {
