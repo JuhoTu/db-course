@@ -91,7 +91,7 @@ namespace BankApp
             {
                 Console.WriteLine("BankApp\nCustomer section\nDelete");
                 Console.WriteLine("[1] Delete User");
-                Console.WriteLine("[2] Delete Transaction");
+                Console.WriteLine("[2] Delete Account");
                 Console.WriteLine("[X] Close deleting");
                 Console.Write("\nChoose procedure: ");
             }
@@ -162,11 +162,14 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "3":
-                        transactionView.Read();
+                        Console.WriteLine("Enter customer's ID to list their accounts: ");
+                        accountView.Read(long.Parse(Console.ReadLine()), 0); // expecting the user to input in correct form
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "4":
-
+                        customerView.Read();
+                        accountView.Read();
+                        transactionView.Read();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "X":

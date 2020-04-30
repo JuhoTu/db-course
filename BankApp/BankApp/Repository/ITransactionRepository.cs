@@ -9,6 +9,7 @@ namespace BankApp.Repository
     {
         Transaction Create(Transaction newTransaction);
         List<Transaction> Read();
+        List<Transaction> Read(string IBAN);
         Transaction Update(Transaction updateTransaction);
         Transaction Delete(Transaction deleteTransaction);
     }

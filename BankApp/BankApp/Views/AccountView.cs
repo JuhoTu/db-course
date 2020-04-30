@@ -33,6 +33,13 @@ namespace BankApp.Views
             PrintAccounts(accounts);
         }
 
+        public string Read(long customerId, int i)
+        {
+            var accounts = _accountService.Read(customerId);
+            PrintAccounts(accounts);
+            return accounts[i].IBAN;
+        }
+
         public void Update()
         {
             throw new NotImplementedException();

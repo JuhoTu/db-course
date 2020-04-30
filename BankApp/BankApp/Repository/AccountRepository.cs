@@ -39,6 +39,12 @@ namespace BankApp.Repository
             return accounts;
         }
 
+        public List<Account> Read(long customerId, int i)
+        {
+            var accounts = _bankdbContext.Account.Where(a => a.CustomerId == customerId).ToList();
+            return accounts;
+        }
+
         public Account Update(Account updateAccount)
         {
             throw new NotImplementedException();

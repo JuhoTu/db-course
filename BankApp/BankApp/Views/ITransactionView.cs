@@ -8,6 +8,7 @@ namespace BankApp.Views
     {
         void Create();
         void Read();
+        void Read(string IBAN);
         void Update();
         void Delete();
     }

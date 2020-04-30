@@ -21,6 +21,12 @@ namespace BankApp.Views
             PrintTransactions(transactions);
         }
 
+        public void Read(string IBAN)
+        {
+            var transactions = _transactionService.Read(IBAN);
+            PrintTransactions(transactions);
+        }
+
         public void Update()
         {
             throw new NotImplementedException();

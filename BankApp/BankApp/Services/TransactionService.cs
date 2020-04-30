@@ -21,6 +21,12 @@ namespace BankApp.Services
             return transactions;
         }
 
+        public List<Transaction> Read(string IBAN)
+        {
+            var transactions = _transactionRepository.Read(IBAN);
+            return transactions;
+        }
+
         public Transaction Update(Transaction updateTransaction)
         {
             throw new NotImplementedException();

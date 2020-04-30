@@ -9,6 +9,7 @@ namespace BankApp.Views
         void Create(long customerId);
         void Read();
         void Read(long bankId);
+        string Read(long customerId, int i);
         void Update();
         void Delete();
     }

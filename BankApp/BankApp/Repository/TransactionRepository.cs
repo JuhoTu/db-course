@@ -22,6 +22,12 @@ namespace BankApp.Repository
             return transactions;
         }
 
+        public List<Transaction> Read(string IBAN)
+        {
+            var transactions = _bankdbContext.Transaction.Where(t => t.IBAN == IBAN).ToList();
+            return transactions;
+        }
+
         public Transaction Update(Transaction updateTransaction)
         {
             throw new NotImplementedException();
