@@ -26,19 +26,19 @@ namespace BankApp
                 {
                     case "C":
                         bankView.Create();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "R":
                         bankView.Read();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "U":
                         bankView.Update();
-                        msg = "\n---------------------------->! \nPress Enter to continue!";
+                        msg = "\n---------------------------->! \nPress a key to continue!";
                         break;
                     case "D":
                         bankView.Delete();
-                        msg = "\n---------------------------->! \nPress Enter to continue!";
+                        msg = "\n---------------------------->! \nPress a key to continue!";
                         break;
                     case "X":
                         msg = "\nChanging to main menu\nPress a key to continue";

@@ -35,8 +35,13 @@ namespace BankApp.Views
 
         public string Read(long customerId, int i)
         {
-            var accounts = _accountService.Read(customerId);
-            PrintAccounts(accounts);
+            var accounts = _accountService.Read(customerId, i);
+            if (i == -1)
+            {
+                PrintAccounts(accounts);
+                return null;
+            }
+
             return accounts[i].IBAN;
         }
 

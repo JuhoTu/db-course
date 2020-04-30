@@ -28,19 +28,19 @@ namespace BankApp
                 {
                     case "C":
                         Create();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "R":
                         Read();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "U":
                         Update();
-                        msg = "\n---------------------------->! \nPress Enter to continue!";
+                        msg = "\n---------------------------->! \nPress a key to continue!";
                         break;
                     case "D":
                         Delete();
-                        msg = "\n---------------------------->! \nPress Enter to continue!";
+                        msg = "\n---------------------------->! \nPress a key to continue!";
                         break;
                     case "X":
                         msg = "\nChanging to main menu\nPress a key to continue";
@@ -116,16 +116,16 @@ namespace BankApp
                 {
                     case "1":
                         accountView.Create(customerView.Create());
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "2":
                         Console.WriteLine("Enter customer's ID you want to add an account: ");
                         accountView.Create(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "3":
                         transactionView.Create();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
                         msg = "\nChanging to main menu\nPress a key to continue";
@@ -154,23 +154,22 @@ namespace BankApp
                     case "1":
                         Console.WriteLine("Enter bank's ID to list its accounts: ");
                         accountView.Read(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "2":
                         Console.WriteLine("Enter bank's ID to list its customers: ");
                         customerView.Read(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "3":
                         Console.WriteLine("Enter customer's ID to list their accounts: ");
-                        accountView.Read(long.Parse(Console.ReadLine()), 0); // expecting the user to input in correct form
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        accountView.Read(long.Parse(Console.ReadLine()), -1); // expecting the user to input in correct form
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "4":
-                        customerView.Read();
-                        accountView.Read();
-                        transactionView.Read();
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        Console.WriteLine("Enter customer's ID to list their first account's transactions: ");
+                        transactionView.Read(accountView.Read(long.Parse(Console.ReadLine()), 0)); // expecting the user to input in correct form
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
                         msg = "\nBye bye!";
@@ -203,11 +202,11 @@ namespace BankApp
                 {
                     case "1":
 
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "2":
 
-                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
                         msg = "\nBye bye!";
