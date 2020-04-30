@@ -41,7 +41,18 @@ namespace BankApp.Repository
 
         public Customer Update(Customer updateCustomer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Customer.Update(updateCustomer);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Customer updated successfully");
+                return updateCustomer;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Customer update failed: " + ex.Message);
+                return null;
+            }
         }
 
         public Customer Delete(Customer deleteCustomer)

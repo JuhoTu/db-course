@@ -30,7 +30,8 @@ namespace BankApp.Services
 
         public Customer Update(Customer updateCustomer)
         {
-            throw new NotImplementedException();
+            var customer = _customerRepository.Update(updateCustomer);
+            return updateCustomer;
         }
 
         public Customer Delete(Customer deleteCustomer)

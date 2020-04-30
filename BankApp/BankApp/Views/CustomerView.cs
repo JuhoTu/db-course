@@ -37,7 +37,20 @@ namespace BankApp.Views
 
         public void Update()
         {
-            throw new NotImplementedException();
+            var customers = _customerService.Read();
+            Console.WriteLine("Input customer id: ");
+            long customerId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            var updateCustomer = ReturnCustomerById(customers, customerId);
+            if (updateCustomer != null)
+            {
+                Console.WriteLine("Change last name to input: ");
+                updateCustomer.LastName = Console.ReadLine();
+                _customerService.Update(updateCustomer);
+            }
+            else
+            {
+                Console.WriteLine("Could not find a customer with customerId: " + customerId);
+            }
         }
 
         public void Delete()
@@ -52,6 +65,23 @@ namespace BankApp.Views
             {
                 Console.Write($"\n{c.Id}\t{c.FirstName} {c.LastName}\t{c.Id}");
             }
+        }
+
+        /// <summary>
+        /// Returns customer by customerId
+        /// </summary>
+        /// <param name="accounts"></param>
+        /// <param name="IBAN"></param>
+        /// <returns></returns>
+        private Customer ReturnCustomerById(List<Customer> customers, long customerId)
+        {
+            foreach (var c in customers)
+            {
+                if (c.Id == customerId)
+                    return c;
+            }
+
+            return null;
         }
     }
 }

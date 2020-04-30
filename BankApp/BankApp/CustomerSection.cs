@@ -132,7 +132,7 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
-                        msg = "\nChanging to main menu\nPress a key to continue";
+                        msg = "\nChanging to customer menu\nPress a key to continue";
                         break;
                     default:
                         msg = "Error occured - Press Enter and start over!";
@@ -176,7 +176,7 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
-                        msg = "\nBye bye!";
+                        msg = "\nChanging to customer menu\nPress a key to continue";
                         break;
                     default:
                         msg = "Error occured - Press Enter and start over!";
@@ -190,7 +190,7 @@ namespace BankApp
 
         private void Update()
         {
-            // update a customer's info
+            customerView.Update();
         }
 
         private void Delete()
@@ -213,7 +213,7 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress a key to continue!";
                         break;
                     case "X":
-                        msg = "\nBye bye!";
+                        msg = "\nChanging to customer menu\nPress a key to continue";
                         break;
                     default:
                         msg = "Error occured - Press Enter and start over!";
