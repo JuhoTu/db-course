@@ -10,7 +10,7 @@ namespace BankApp.Views
     {
         //Inject
         private readonly ICustomerService _customerService = new CustomerService();
-        public void Create()
+        public long Create()
         {
             Console.WriteLine("Input first name: ");
             string fName = Console.ReadLine();
@@ -20,6 +20,7 @@ namespace BankApp.Views
             long bankId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
             Customer newCustomer = new Customer() { FirstName = fName, LastName = lName, BankId = bankId };
             _customerService.Create(newCustomer);
+            return newCustomer.Id;
         }
 
         public void Read()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Models;
 using BankApp.Services;
 
 namespace BankApp.Views
@@ -9,9 +10,15 @@ namespace BankApp.Views
     {
         //Inject
         private readonly IAccountService _accountService = new AccountService();
-        public void Create()
+        public void Create(long customerId)
         {
-            Console.WriteLine(CreateIBAN());
+            string IBAN = CreateIBAN();
+            Console.WriteLine("Input account name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Input bank id: ");
+            long bankId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            Account newAccount = new Account() { IBAN = IBAN, Name = name, BankId = bankId, CustomerId = customerId, Balance = 0};
+            _accountService.Create(newAccount);
         }
 
         public void Read()

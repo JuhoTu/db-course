@@ -6,7 +6,7 @@ namespace BankApp.Views
 {
     interface IAccountView
     {
-        void Create();
+        void Create(long customerId);
         void Read();
         void Update();
         void Delete();

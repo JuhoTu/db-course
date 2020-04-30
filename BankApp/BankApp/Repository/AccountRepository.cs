@@ -12,7 +12,18 @@ namespace BankApp.Repository
         private readonly BankdbContext _bankdbContext = new BankdbContext();
         public Account Create(Account newAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Account.Add(newAccount);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Account added successfully");
+                return newAccount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Account creation failed" + ex.Message);
+                return null;
+            }
         }
 
         public Account Read(Account readAccount)

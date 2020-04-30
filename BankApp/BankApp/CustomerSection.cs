@@ -115,12 +115,12 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-                        customerView.Create();
-                        accountView.Create();
+                        accountView.Create(customerView.Create());
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
-                        accountView.Create();
+                        Console.WriteLine("Enter customer's ID you want to add an account: ");
+                        accountView.Create(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "3":
@@ -152,12 +152,11 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-                        customerView.Create();
-                        accountView.Create();
+
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
-                        transactionView.Create();
+
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "X":
@@ -189,12 +188,11 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-                        customerView.Create();
-                        accountView.Create();
+
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
-                        transactionView.Create();
+
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "X":

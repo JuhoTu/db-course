@@ -12,7 +12,8 @@ namespace BankApp.Services
         private readonly IAccountRepository _accountRepository = new AccountRepository();
         public Account Create(Account newAccount)
         {
-            throw new NotImplementedException();
+            var createAccount = _accountRepository.Create(newAccount);
+            return createAccount;
         }
 
         public Account Read(Account readAccount)
