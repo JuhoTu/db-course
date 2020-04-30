@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BankApp.Models;
 using BankApp.Services;
 
 namespace BankApp.Views
@@ -16,7 +17,8 @@ namespace BankApp.Views
 
         public void Read()
         {
-            throw new NotImplementedException();
+            var transactions = _transactionService.Read();
+            PrintTransactions(transactions);
         }
 
         public void Update()
@@ -27,6 +29,15 @@ namespace BankApp.Views
         public void Delete()
         {
             throw new NotImplementedException();
+        }
+
+        private void PrintTransactions(List<Transaction> transactions)
+        {
+            Console.WriteLine("id\tIBAN\t\t\tAmount\tDate");
+            foreach (var t in transactions)
+            {
+                Console.Write($"\n{t.Id}\t{t.IBAN}\t{t.Amount}\t{t.TimeStamp}");
+            }
         }
     }
 }

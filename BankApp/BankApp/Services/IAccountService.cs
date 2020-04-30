@@ -8,7 +8,7 @@ namespace BankApp.Services
     interface IAccountService
     {
         Account Create(Account newAccount);
-        Account Read(Account readAccount);
+        List<Account> Read();
         Account Update(Account updateAccount);
         Account Delete(Account deleteAccount);
     }

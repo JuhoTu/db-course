@@ -16,9 +16,10 @@ namespace BankApp.Services
             return newCustomer;
         }
 
-        public Customer Read(Customer readCustomer)
+        public List<Customer> Read()
         {
-            throw new NotImplementedException();
+            var customers = _customerRepository.Read();
+            return customers;
         }
 
         public Customer Update(Customer updateCustomer)

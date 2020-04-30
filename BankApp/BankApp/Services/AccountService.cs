@@ -16,9 +16,10 @@ namespace BankApp.Services
             return createAccount;
         }
 
-        public Account Read(Account readAccount)
+        public List<Account> Read()
         {
-            throw new NotImplementedException();
+            var accounts = _accountRepository.Read();
+            return accounts;
         }
 
         public Account Update(Account updateAccount)

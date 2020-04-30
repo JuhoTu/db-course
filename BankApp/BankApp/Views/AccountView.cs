@@ -23,7 +23,8 @@ namespace BankApp.Views
 
         public void Read()
         {
-            throw new NotImplementedException();
+            var accounts = _accountService.Read();
+            PrintAccounts(accounts);
         }
 
         public void Update()
@@ -34,6 +35,15 @@ namespace BankApp.Views
         public void Delete()
         {
             throw new NotImplementedException();
+        }
+
+        private void PrintAccounts(List<Account> accounts)
+        {
+            Console.WriteLine("IBAN\t\tName\t\tBank\tCustomer\tBalance");
+            foreach (var a in accounts)
+            {
+                Console.Write($"\n{a.IBAN}\t{a.Name}\t\t{a.BankId}\t{a.CustomerId}\t{a.Balance}");
+            }
         }
 
         /// <summary>

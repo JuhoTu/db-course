@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using BankApp.Data;
 using BankApp.Models;
@@ -26,9 +27,10 @@ namespace BankApp.Repository
             }
         }
 
-        public Account Read(Account readAccount)
+        public List<Account> Read()
         {
-            throw new NotImplementedException();
+            var accounts = _bankdbContext.Account.ToList();
+            return accounts;
         }
 
         public Account Update(Account updateAccount)

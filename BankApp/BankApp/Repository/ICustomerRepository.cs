@@ -8,7 +8,7 @@ namespace BankApp.Repository
     interface ICustomerRepository
     {
         Customer Create(Customer newCustomer);
-        Customer Read(Customer readCustomer);
+        List<Customer> Read();
         Customer Update(Customer updateCustomer);
         Customer Delete(Customer deleteCustomer);
     }

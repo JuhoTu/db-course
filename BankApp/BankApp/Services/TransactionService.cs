@@ -15,9 +15,10 @@ namespace BankApp.Services
             throw new NotImplementedException();
         }
 
-        public Transaction Read(Transaction readTransaction)
+        public List<Transaction> Read()
         {
-            throw new NotImplementedException();
+            var transactions = _transactionRepository.Read();
+            return transactions;
         }
 
         public Transaction Update(Transaction updateTransaction)

@@ -8,7 +8,7 @@ namespace BankApp.Repository
     interface ITransactionRepository
     {
         Transaction Create(Transaction newTransaction);
-        Transaction Read(Transaction readTransaction);
+        List<Transaction> Read();
         Transaction Update(Transaction updateTransaction);
         Transaction Delete(Transaction deleteTransaction);
     }

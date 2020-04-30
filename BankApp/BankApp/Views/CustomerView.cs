@@ -25,7 +25,8 @@ namespace BankApp.Views
 
         public void Read()
         {
-            throw new NotImplementedException();
+            var customers = _customerService.Read();
+            PrintCustomers(customers);
         }
 
         public void Update()
@@ -36,6 +37,15 @@ namespace BankApp.Views
         public void Delete()
         {
             throw new NotImplementedException();
+        }
+
+        private void PrintCustomers(List<Customer> customers)
+        {
+            Console.WriteLine("id\tName\t\tBank");
+            foreach (var c in customers)
+            {
+                Console.Write($"\n{c.Id}\t{c.FirstName} {c.LastName}\t{c.Id}");
+            }
         }
     }
 }

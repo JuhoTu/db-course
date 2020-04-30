@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using BankApp.Data;
 using BankApp.Models;
@@ -15,9 +16,10 @@ namespace BankApp.Repository
             throw new NotImplementedException();
         }
 
-        public Transaction Read(Transaction readTransaction)
+        public List<Transaction> Read()
         {
-            throw new NotImplementedException();
+            var transactions = _bankdbContext.Transaction.ToList();
+            return transactions;
         }
 
         public Transaction Update(Transaction updateTransaction)

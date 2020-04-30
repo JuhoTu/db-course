@@ -152,10 +152,18 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-
+                        customerView.Read();
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
+                        accountView.Read();
+                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        break;
+                    case "3":
+                        transactionView.Read();
+                        msg = "\n----------------------------> \nPress Enter to continue!";
+                        break;
+                    case "4":
 
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
@@ -167,6 +175,7 @@ namespace BankApp
                         break;
                 }
                 Console.WriteLine(msg);
+                Console.ReadKey();
             }
             while (choice.ToUpper() != "X");
         }
@@ -203,6 +212,7 @@ namespace BankApp
                         break;
                 }
                 Console.WriteLine(msg);
+                Console.ReadKey();
             }
             while (choice.ToUpper() != "X");
         }
