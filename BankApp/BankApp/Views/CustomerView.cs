@@ -29,6 +29,12 @@ namespace BankApp.Views
             PrintCustomers(customers);
         }
 
+        public void Read(long bankId)
+        {
+            var customers = _customerService.Read(bankId);
+            PrintCustomers(customers);
+        }
+
         public void Update()
         {
             throw new NotImplementedException();

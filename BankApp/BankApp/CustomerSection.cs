@@ -156,7 +156,8 @@ namespace BankApp
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
-                        accountView.Read();
+                        Console.WriteLine("Enter bank's ID to list its customers: ");
+                        customerView.Read(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "3":

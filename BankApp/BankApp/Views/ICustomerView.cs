@@ -8,6 +8,7 @@ namespace BankApp.Views
     {
         long Create();
         void Read();
+        void Read(long bankId);
         void Update();
         void Delete();
     }

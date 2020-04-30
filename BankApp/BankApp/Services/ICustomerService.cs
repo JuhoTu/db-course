@@ -9,6 +9,7 @@ namespace BankApp.Services
     {
         Customer Create(Customer newCustomer);
         List<Customer> Read();
+        List<Customer> Read(long bankId);
         Customer Update(Customer updateCustomer);
         Customer Delete(Customer deleteCustomer);
     }

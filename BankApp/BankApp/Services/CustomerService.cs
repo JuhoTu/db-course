@@ -22,6 +22,12 @@ namespace BankApp.Services
             return customers;
         }
 
+        public List<Customer> Read(long bankId)
+        {
+            var customers = _customerRepository.Read(bankId);
+            return customers;
+        }
+
         public Customer Update(Customer updateCustomer)
         {
             throw new NotImplementedException();
