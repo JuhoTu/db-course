@@ -22,6 +22,12 @@ namespace BankApp.Services
             return accounts;
         }
 
+        public List<Account> Read(long bankId)
+        {
+            var accounts = _accountRepository.Read(bankId);
+            return accounts;
+        }
+
         public Account Update(Account updateAccount)
         {
             throw new NotImplementedException();

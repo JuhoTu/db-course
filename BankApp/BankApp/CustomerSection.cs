@@ -152,7 +152,8 @@ namespace BankApp
                 switch (choice.ToUpper())
                 {
                     case "1":
-                        customerView.Read();
+                        Console.WriteLine("Enter bank's ID to list its accounts: ");
+                        accountView.Read(long.Parse(Console.ReadLine())); // expecting the user to input in correct form
                         msg = "\n----------------------------> \nPress Enter to continue!";
                         break;
                     case "2":
