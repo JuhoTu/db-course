@@ -42,7 +42,8 @@ namespace BankApp.Services
 
         public Account Delete(Account deleteAccount)
         {
-            throw new NotImplementedException();
+            _accountRepository.Delete(deleteAccount);
+            return deleteAccount;
         }
     }
 }

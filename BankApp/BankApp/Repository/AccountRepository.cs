@@ -63,7 +63,18 @@ namespace BankApp.Repository
 
         public Account Delete(Account deleteAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Account.Remove(deleteAccount);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Account successfully deleted");
+                return deleteAccount;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Account deletion failed: " + e);
+                return null;
+            }
         }
     }
 }

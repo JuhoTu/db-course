@@ -62,7 +62,19 @@ namespace BankApp.Views
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            var accounts = _accountService.Read();
+            Console.WriteLine("Input customer's id whose account you want to delete: ");
+            long customerId = long.Parse(Console.ReadLine()); // expecting the user to input a correct value
+            string IBAN = Read(customerId, 0);
+            var deleteAccount = ReturnAccountByIBAN(accounts, IBAN);
+            if (deleteAccount != null)
+            {
+                _accountService.Delete(deleteAccount);
+            }
+            else
+            {
+                Console.WriteLine("Could not find account with IBAN: " + IBAN);
+            }
         }
 
         private void PrintAccounts(List<Account> accounts)
