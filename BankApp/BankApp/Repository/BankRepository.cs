@@ -11,9 +11,20 @@ namespace BankApp.Repository
     {
         //Inject
         private readonly BankdbContext _bankdbContext = new BankdbContext();
-        public BankSection Create(BankSection newBank)
+        public Bank Create(Bank newBank)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Bank.Add(newBank);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Bank added successfully");
+                return newBank;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bank creation failed" + ex.Message);
+                return null;
+            }
         }
 
         public List<Bank> Read()
@@ -22,12 +33,23 @@ namespace BankApp.Repository
             return banks;
         }
 
-        public BankSection Update(BankSection updateBank)
+        public Bank Update(Bank updateBank)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _bankdbContext.Bank.Add(updateBank);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Bank updated successfully");
+                return updateBank;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bank update failed" + ex.Message);
+                return null;
+            }
         }
 
-        public BankSection Delete(BankSection deleteBank)
+        public Bank Delete(Bank deleteBank)
         {
             throw new NotImplementedException();
         }

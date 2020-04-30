@@ -10,22 +10,22 @@ namespace BankApp.Services
     {
         //Inject
         private readonly ICustomerRepository _customerRepository = new CustomerRepository();
-        public CustomerSection Create(CustomerSection newCustomer)
+        public Customer Create(Customer newCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerSection Read(CustomerSection readCustomer)
+        public Customer Read(Customer readCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerSection Update(CustomerSection updateCustomer)
+        public Customer Update(Customer updateCustomer)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerSection Delete(CustomerSection deleteCustomer)
+        public Customer Delete(Customer deleteCustomer)
         {
             throw new NotImplementedException();
         }

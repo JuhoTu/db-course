@@ -10,9 +10,10 @@ namespace BankApp.Services
     {
         //Inject
         private readonly IBankRepository _bankRepository = new BankRepository();
-        public BankSection Create(BankSection newBank)
+        public Bank Create(Bank newBank)
         {
-            throw new NotImplementedException();
+            var createBank = _bankRepository.Create(newBank);
+            return createBank;
         }
 
         public List<Bank> Read()
@@ -21,12 +22,13 @@ namespace BankApp.Services
             return banks;
         }
 
-        public BankSection Update(BankSection updateBank)
+        public Bank Update(Bank updateBank)
         {
-            throw new NotImplementedException();
+            var bank = _bankRepository.Update(updateBank);
+            return updateBank;
         }
 
-        public BankSection Delete(BankSection deleteBank)
+        public Bank Delete(Bank deleteBank)
         {
             throw new NotImplementedException();
         }
